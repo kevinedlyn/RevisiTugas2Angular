@@ -8,10 +8,12 @@ import { HelloComponent } from './hello.component';
 import { InputComponent } from './input/input.component';
 import { ListComponent } from './list/list.component';
 import { GlobSerService } from './glob-ser.service';
+import { EditComponent } from './edit/edit.component';
 
 const ROUTES: Routes = [
   {path: 'list', component: ListComponent},
-  {path: 'input', component: InputComponent}
+  {path: 'input', component: InputComponent},
+  {path : 'edit', component: EditComponent}
 ]
 
 @NgModule({
@@ -19,7 +21,7 @@ const ROUTES: Routes = [
     BrowserModule, 
     FormsModule,
     RouterModule.forRoot(ROUTES)],
-  declarations: [ AppComponent, HelloComponent, InputComponent, ListComponent ],
+  declarations: [ AppComponent, HelloComponent, InputComponent, ListComponent, EditComponent ],
   bootstrap:    [ AppComponent ],
   providers: [GlobSerService]
 })
