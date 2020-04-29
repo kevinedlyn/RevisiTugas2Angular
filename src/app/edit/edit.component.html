@@ -1,1 +1,18 @@
 <h2>Halaman Edit</h2>
+
+<p>List</p>
+<div *ngFor = "let isidata of datadariglob">
+  {{isidata.jurusan}} - {{isidata.desk}}
+</div>
+<br>
+<p>Pergantian nama dilakukan berdasarkan nama jurusan</p>
+
+<div>
+  <input [(ngModel)] = 'namajurusan' type="text" placeholder='Masukan Nama Jurusan yang akan diedit' style= "width:250px"> <br><br>
+  <input [(ngModel)] = 'deskripsijurusan' type="text" placeholder='Deskripsi Jurusan Baru' style= "width:250px"> <br><br>
+  <button (click)="submitchange()" >Submit Change</button>
+</div>
+
+<div *ngIf="done">
+  <p>Edit berhasil!</p>
+</div>

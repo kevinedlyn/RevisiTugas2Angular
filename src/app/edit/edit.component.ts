@@ -9,9 +9,32 @@ import { GlobSerService } from '../glob-ser.service';
 })
 export class EditComponent implements OnInit {
 
-  constructor(private router: Router, public variabelglobal : GlobSerService) { }
+datadariglob : any;
+  datatemp : any;
+  namajurusan = '';
+  deskripsijurusan = '';
+  done = false;
+
+  constructor(private router: Router, public variabelglobal : GlobSerService ) { 
+    this.datadariglob = this.variabelglobal.getData();
+    this.datatemp = this.datadariglob;
+  }
 
   ngOnInit() {
+    
+  }
+
+  submitchange()
+  {
+    for(let i = 0; i < this.datatemp.length; i++)
+    {
+      if(this.datatemp[i].jurusan == this.namajurusan)
+      {
+        this.datatemp[i].desk = this.deskripsijurusan;
+      }
+    }
+    this.variabelglobal.setData(this.datatemp);
+    this.done = true;
   }
 
 }
